@@ -15,7 +15,10 @@ config :live_weather, LiveWeatherWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "cex/4D6Lw8Vcxgloi4ezR743vKRtpr/GObqr5ekmqAwiQuig9LCf2MWQJ2rwLk/J",
   render_errors: [view: LiveWeatherWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: LiveWeather.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: LiveWeather.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "iYAUl5VZghYNuuBXcQ/b2Lfr2dF5Zs1T"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

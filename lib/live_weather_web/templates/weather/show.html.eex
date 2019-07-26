@@ -1,0 +1,13 @@
+<div class="container">
+  <% [weather|_] = @data["weather"] %>
+  <h1>Weather for <%= @data["name"] %>
+    <span class="weather-icon">
+      <img src="<%= "https://openweathermap.org/img/w/" <> weather["icon"] <> ".png" %>">
+    </span>
+  </h1>
+  <h3>Current weather conditions: <%= weather["main"] %></h3>
+  <h3>Temperature: <%= @data["main"]["temp"] |> round() %></h3>
+  <h3>Humidity: <%= @data["main"]["humidity"] %>%</h3>
+  <h3>Wind: <%= @data["wind"]["speed"] %> mph</h3>
+</div>
+
